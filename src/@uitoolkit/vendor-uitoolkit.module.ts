@@ -1,15 +1,18 @@
 import {NgModule} from '@angular/core';
 import {
-  ButtonsModule
+  ButtonsModule,
+  BsDropdownModule
 } from 'ngx-bootstrap';
 
-const componentList: any[] = [
-  ButtonsModule
-];
-
 @NgModule({
-  imports: componentList,
-  exports: componentList,
+  imports: [
+    ButtonsModule.forRoot(),
+    BsDropdownModule.forRoot()
+  ],
+  exports: [
+    ButtonsModule,
+    BsDropdownModule
+  ],
 })
 
-export class VendorUitoolkitModule { }
+export class VendorUIToolkitModule { }

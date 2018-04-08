@@ -1,17 +1,17 @@
-import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA, ModuleWithProviders, Type } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
-import { VendorUitoolkitModule } from './vendor-uitoolkit.module';
+import { VendorUIToolkitModule } from './vendor-uitoolkit.module';
 
 export class MyHammerConfig extends HammerGestureConfig  {}
 
 @NgModule({
   imports: [
     BrowserAnimationsModule,
-    VendorUitoolkitModule
+    VendorUIToolkitModule
   ],
   exports: [
-    VendorUitoolkitModule
+    VendorUIToolkitModule
   ],
   schemas: [
     NO_ERRORS_SCHEMA
@@ -23,6 +23,16 @@ export class MyHammerConfig extends HammerGestureConfig  {}
     }
   ]
 })
-export class UIToolkitModule {}
+export class UIToolkitModule {
+    static forRoot(dbCreator: Type<any>, options?: any): ModuleWithProviders {
+      return {
+        ngModule: UIToolkitModule,
+        providers: []
+      };
+    }
+    static forChild(dbCreator: Type<any>, options?: any): ModuleWithProviders {
+      return UIToolkitModule.forRoot(dbCreator, options);
+    }
+}
 
 

@@ -14,18 +14,16 @@ import {StateService} from '@uirouter/core/lib';
   styleUrls: ['home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  public roomId: number;
 
-
-  public roomId: string = null;
-
-  constructor(private $state: StateService) {}
-
-  ngOnInit(): void {
-    console.log('STICCAZZI1');
+  constructor(private $state: StateService) {
+    this.roomId = 10;
   }
 
-  setRoom(): void {
-    console.log(this.roomId);
+  ngOnInit(): void { }
+
+  setRoom(roomId: number): void {
+    this.roomId = roomId;
     this.$state.go('room', {roomId: this.roomId});
   }
 }

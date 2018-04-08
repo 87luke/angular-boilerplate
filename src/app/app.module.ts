@@ -11,7 +11,6 @@ import { UIToolkitModule } from '../@uitoolkit/uitoolkit.module';
   imports: [
     PagesModule,
     CoreModule,
-    UIToolkitModule,
     BrowserModule
   ],
   providers: [
