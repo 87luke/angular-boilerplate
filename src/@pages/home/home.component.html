@@ -1,35 +1,3 @@
-<!--
-  <form>
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-  </div>
-  <div class="form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
--->
-<div class="btn-group" dropdown>
-  <button id="button-basic" dropdownToggle type="button" class="btn btn-primary dropdown-toggle"
-          aria-controls="dropdown-basic">
-    Button dropdown <span class="caret"></span>
-  </button>
-  <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
-      role="menu" aria-labelledby="button-basic">
-    <li role="menuitem"><a class="dropdown-item" href="#">1</a></li>
-    <li role="menuitem"><a class="dropdown-item" href="#">2</a></li>
-    <li class="divider dropdown-divider"></li>
-    <li role="menuitem"><a class="dropdown-item" href="#">Separated link</a>
-    </li>
-  </ul>
-</div>
 <a uiSref="room" [uiParams]="{roomId: roomId}">
-  SET ROOM {{roomId}}
+  GO TO ROOM PAGE
 </a>

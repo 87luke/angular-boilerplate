@@ -21,6 +21,7 @@ export class RoomComponent implements OnInit {
     public transition: Transition) {}
 
   ngOnInit(): void {
+    console.log(this.transition.params().roomId, this.transition.params().room);
     this.room = this.transition.params().roomId;
     console.log('Room ==> ' + this.room);
   }

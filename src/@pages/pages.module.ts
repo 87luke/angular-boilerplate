@@ -1,6 +1,6 @@
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { UIRouterModule } from '@uirouter/angular';
-import { ROUTER_OPTS } from './pages.state';
+import { PAGES_STATES } from './pages.states';
 import { AppComponent } from '../app/app.component';
 import { FormsModule } from '@angular/forms';
 import { UIToolkitModule } from '../@uitoolkit/uitoolkit.module';
@@ -11,12 +11,19 @@ import { UIToolkitModule } from '../@uitoolkit/uitoolkit.module';
   ],
   imports: [
     FormsModule,
-    UIRouterModule.forRoot(ROUTER_OPTS)
+    UIRouterModule.forRoot({
+      states: PAGES_STATES,
+      useHash: false,
+      otherwise: { state: 'home' }
+    }),
+    UIToolkitModule
   ],
   schemas: [
     NO_ERRORS_SCHEMA
   ],
   providers: [],
-  exports: []
+  exports: [
+    UIToolkitModule
+  ]
 })
 export class PagesModule {}

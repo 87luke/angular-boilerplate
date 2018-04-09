@@ -5,7 +5,6 @@ import {
 } from '@angular/core';
 import {StateService} from '@uirouter/core/lib';
 
-
 @Component({
   selector: 'app-page-home',
   encapsulation: ViewEncapsulation.None, // hack to get the styles to apply locally
