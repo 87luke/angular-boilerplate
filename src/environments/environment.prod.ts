@@ -1,3 +1,8 @@
 export const environment = {
-  production: true
+  production: true,
+  debug: false,
+  states: {
+    login: 'home',
+    root: 'home'
+  }
 };

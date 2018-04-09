@@ -13,8 +13,8 @@ export const roomState = {
   params: { roomId: null },
   resolve: [
     { token: 'roomId', deps: [Transition], resolveFn: getRoom }
-  ]
-  // data: { requiresAuth: true }
+  ],
+  data: { requiresAuth: true }
 };
 
 export const ROOM_STATES = [
