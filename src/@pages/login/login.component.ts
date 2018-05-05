@@ -7,6 +7,7 @@ import {
 import {AuthService} from '../../@core/services/auth.service';
 import { TargetState, StateService } from '@uirouter/core';
 import {UserService} from '../../@core/services/user.service';
+import { environment } from '../../environments/environment.prod';
 
 @Component({
   encapsulation: ViewEncapsulation.None, // hack to get the styles to apply locally
@@ -41,9 +42,9 @@ export class LoginComponent implements OnInit {
     this.authenticating = true;
 
     const returnToOriginalState = () => {
-      const state = this.returnTo.state();
+      const state = environment.states.home;
       const params = this.returnTo.params();
-      const options = Object.assign({}, this.returnTo.options(), { reload: true });
+      const options = Object.assign({}, {}, {});
       this.userService.setUsername(this.credentials);
       this.$state.go(state, params, options);
     };

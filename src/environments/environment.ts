@@ -8,6 +8,7 @@ export const environment = {
   debug: true,
   states: {
     login: 'login',
-    root: 'home'
+    root: 'login',
+    home: 'home'
   }
 };

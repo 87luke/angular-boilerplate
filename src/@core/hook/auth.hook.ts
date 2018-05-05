@@ -24,7 +24,7 @@ export function requiresAuthHook(transitionService: TransitionService, ) {
     const authService: AuthService = transition.injector().get(AuthService);
     const $state = transition.router.stateService;
     if (!authService.isAuthenticated()) {
-      return $state.target(environment.states.login, undefined, { location: false });
+      return $state.target(environment.states.login, undefined, { location: true });
     }
   };
 

@@ -1,4 +1,5 @@
-
-<a uiSref="room" [uiParams]="{roomId: roomId}">
-  OPEN CHAT
-</a>
+{{lat}} - {{lng}}
+<ul>
+    <li *ngFor="let place of places">{{place.name}}</li>
+</ul>
+<div #gmap style="width:100%;height:400px"></div>
