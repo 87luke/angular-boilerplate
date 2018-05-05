@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+    <h3>Log In</h3>
+    <div>
+      <label for="username">Username:</label>
+      <input class="form-control" type="text" name="username" id="username" [(ngModel)]="credentials.username"/>
+    </div>
+
+    <div>
+      <label for="password">Password:</label>
+      <input class="form-control" type="password" name="password" id="password" [(ngModel)]="credentials.password">
+    </div>
+
+    <div>
+      <button class="btn btn-primary" type="button" [disabled]="authenticating" (click)="login(credentials)">
+        <i class="fa fa-spin fa-spinner" *ngIf="authenticating"></i> <span>Log in</span>
+      </button>
+    </div>
+  </div>
+</div>
