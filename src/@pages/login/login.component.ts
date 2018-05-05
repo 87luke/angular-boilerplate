@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
     const returnToOriginalState = () => {
       const state = environment.states.home;
       const params = this.returnTo.params();
-      const options = Object.assign({}, this.returnTo.options(), { reload: true });
+      const options = Object.assign({}, {}, {});
       this.userService.setUsername(this.credentials);
       this.$state.go(state, params, options);
     };
