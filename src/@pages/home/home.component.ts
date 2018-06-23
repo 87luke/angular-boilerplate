@@ -47,10 +47,10 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.getCurrentPosition();
     this.coordsSubscription = this.refreshCoords.subscribe(() => {
-      this.cdr.markForCheck();
+      this.cdr.detectChanges();
     });
     this.placesSubscription = this.refreshPlaces.subscribe(() => {
-      this.cdr.markForCheck();
+      this.cdr.detectChanges();
     });
   }
 
@@ -73,7 +73,6 @@ export class HomeComponent implements OnInit {
       }, (results, status) => {
         if (status === google.maps.places.PlacesServiceStatus.OK) {
           this.places = results;
-          this.refreshPlaces.next();
           for (let i = 0; i < results.length; i++) {
             const placeLoc = results[i].geometry.location;
             const marker = new google.maps.Marker({
@@ -85,7 +84,7 @@ export class HomeComponent implements OnInit {
               infowindow.open(this.map, this);
             });
           }
-          setTimeout(() =>  {this.refreshPlaces.next();}, 300)
+          this.refreshPlaces.next();
         }
       });
       this.refreshCoords.next();
