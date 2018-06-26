@@ -1,15 +1,15 @@
-import {RoomComponent} from './room.component';
+import {GeometryComponent} from './geometry.component';
 import { Transition } from '@uirouter/core';
 
 export function getRoom ($transition$) {
   return $transition$.params().roomId;
 }
 
-export const roomState = {
+export const geometryState = {
   parent: 'app',
-  name: 'room',
-  url: '/room',
-  component: RoomComponent,
+  name: 'geometry',
+  url: '/geometry',
+  component: GeometryComponent,
   params: { roomId: null },
   resolve: [
     { token: 'roomId', deps: [Transition], resolveFn: getRoom }
@@ -17,6 +17,6 @@ export const roomState = {
   data: { requiresAuth: true }
 };
 
-export const ROOM_STATES = [
-  roomState
+export const GEOMETRY_STATES = [
+  geometryState
 ];

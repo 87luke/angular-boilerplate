@@ -17,10 +17,10 @@ export const loginState = {
   loadChildren: './login/login.module#LoginModule'
 };
 
-export const roomState = {
-  name: 'room.**',
-  url: '/room',
-  loadChildren: './room/room.module#RoomModule'
+export const geometryState = {
+  name: 'geometry.**',
+  url: '/geometry',
+  loadChildren: './geometry/geometry.module#GeometryModule'
 };
 
 
@@ -28,5 +28,5 @@ export const PAGES_STATES = [
   appState,
   loginState,
   homeState,
-  roomState
+  geometryState
 ];
